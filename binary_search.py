@@ -15,8 +15,7 @@ def binary(array, y):
 
 
 def binary_2(array, x):  # not recursive and can not show the index of x element
-    up = len(array)
-    down = 0
+    up,down = len(array),0
     while up >= down:
         mid = (up+down) // 2
         if x == array[mid]:
@@ -26,3 +25,17 @@ def binary_2(array, x):  # not recursive and can not show the index of x element
         elif x > array[mid]:
             down = mid+1
     return "not found"
+
+def binary_3(array,x):
+    up,down = len(array),0
+    while up - down > 1:
+        mid = (up + down) // 2
+        if x < array[mid]:
+            up = mid
+        else: # x >= array[mid]
+            down = mid    
+
+    return x = array[down]
+
+
+    
